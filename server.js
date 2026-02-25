@@ -17,7 +17,6 @@ app.post("/predict", (req, res) => {
         return res.json({ status: "error", message: "INVALID PERIOD" });
     }
 
-    // Demo prediction logic (replace with real logic later)
     const result = Math.random() > 0.5 ? "BIG" : "SMALL";
 
     res.json({
@@ -28,6 +27,8 @@ app.post("/predict", (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log("Server running");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
